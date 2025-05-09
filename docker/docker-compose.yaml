@@ -1,5 +1,5 @@
 services:
-  app:
+  mp_notification_api_dev:
     build:
       context: ../
       dockerfile: docker/Dockerfile
@@ -13,6 +13,22 @@ services:
     ports:
       - "${PORT_HOST_DEV}:${PORT_CONTAINER_DEV}"
       - "${PORT_HOST_DEBUG_DEV}:${PORT_CONTAINER_DEBUG_DEV}"
+    environment:
+      - URL_MP_QR=${URL_MP_QR}
+      - BEARER_TOKEN_MP=${BEARER_TOKEN_MP}
+
+  mp_notification_api_prod:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+      target: prod
+      args:
+        PORT: ${PORT_CONTAINER_PROD}
+        WORKDIR_API: ${WORKDIR_API}
+    container_name: mp_notification_api_prod
+    image: mp_notification_api_prod
+    ports:
+      - "${PORT_HOST_PROD}:${PORT_CONTAINER_PROD}"
     environment:
       - URL_MP_QR=${URL_MP_QR}
       - BEARER_TOKEN_MP=${BEARER_TOKEN_MP}
