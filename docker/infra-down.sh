@@ -1,1 +1,0 @@
-eval docker compose down && docker image prune -f
