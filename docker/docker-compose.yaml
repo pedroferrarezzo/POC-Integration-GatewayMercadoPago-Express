@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+      target: dev
+      args:
+        PORT: ${PORT_CONTAINER_DEV}
+        PORT_DEBUG: ${PORT_CONTAINER_DEBUG_DEV}
+        WORKDIR_API: ${WORKDIR_API}
+    container_name: mp_notification_api_dev
+    image: mp_notification_api_dev
+    ports:
+      - "${PORT_HOST_DEV}:${PORT_CONTAINER_DEV}"
+      - "${PORT_HOST_DEBUG_DEV}:${PORT_CONTAINER_DEBUG_DEV}"
+    environment:
+      - URL_MP_QR=${URL_MP_QR}
+      - BEARER_TOKEN_MP=${BEARER_TOKEN_MP}
