@@ -16,13 +16,7 @@
 
 - Push para o Registry:
   - ``aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 146654071014.dkr.ecr.us-east-1.amazonaws.com``
-  - ``docker build \
-    -f docker/Dockerfile \
-    --target prod \
-    --build-arg PORT=3000 \
-    --build-arg WORKDIR_API=/app \
-    -t ferrarezzo/mpnotificationpoc:prod \
-    .``
+  - ``docker build -f docker/Dockerfile --target prod --build-arg PORT=3000 -build-arg WORKDIR_API=/app -t ferrarezzo/mpnotificationpoc:prod .``
   - ``docker tag ferrarezzo/mpnotificationpoc:prod 146654071014.dkr.ecr.us-east-1.amazonaws.com/ferrarezzo/mpnotificationpoc:prod``
   - ``docker push 146654071014.dkr.ecr.us-east-1.amazonaws.com/ferrarezzo/mpnotificationpoc:prod``
 
