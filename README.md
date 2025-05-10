@@ -1,9 +1,9 @@
 # POC-Integration-GatewayMercadoPago-Express
 
 ## ENDPOINTS
-- /qr/:userId/:externalPosId (HTTP over TCP): gera um QR code e retorna no body a resposta da API do mercado pago;
-- /notification (HTTP over TCP): retransmite o conteúdo enviado no body para todos os clientes conectados via websocket. Atua como um webhook que será informado no atributo "notification_url" da API do mercado pago;
-- / (WEBSOCKET over TCP): exibe o body enviado para o webhook /notification em tempo real.
+- ``/qr/:userId/:externalPosId (HTTP over TCP)``: gera um QR code e retorna no body a resposta da API do mercado pago;
+- ``/notification (HTTP over TCP)``: retransmite o conteúdo enviado no body para todos os clientes conectados via websocket. Atua como um webhook que será informado no atributo "notification_url" da API do mercado pago;
+- ``/ (WEBSOCKET over TCP)``: exibe o body enviado para o webhook /notification em tempo real.
 
 ## UPLOAD ECR
 
