@@ -2,6 +2,7 @@ const express = require('express')
 const axios = require('axios')
 const WebSocket = require('ws')
 const http = require('http')
+const isJSON = require('is-json')
 
 const app = express()
 const port = process.env.PORT
@@ -34,7 +35,7 @@ app.post('/qr/:userId/:externalPosId', async (req, res) => {
   } catch (error) {
     const raw = error.response?.data.message
 
-    let detalhes = typeof raw === 'string' ? JSON.parse(raw) : raw
+    let detalhes = isJSON(raw) ? JSON.parse(raw) : raw
 
     res.status(500).json({
       error: 'Erro ao gerar Qr Code',
