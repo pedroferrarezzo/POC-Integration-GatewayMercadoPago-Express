@@ -45,7 +45,8 @@
 ![image](https://github.com/user-attachments/assets/da6cf81c-99c6-4e72-ab73-c61b9f78f888)
 ![image](https://github.com/user-attachments/assets/5e173c70-168e-46b4-bcc8-aaab4ee68bec)
 ![image](https://github.com/user-attachments/assets/900bbff3-2ed5-466d-920d-f7439e364577)
-![image](https://github.com/user-attachments/assets/a8028706-b62a-453d-abc0-589f21278dc3)
+![image](https://github.com/user-attachments/assets/91d8d471-f6a0-4bd8-8373-f7caee6307f9)
+
 
 ## Referências:
 - https://www.mercadopago.com.br/developers/pt/docs/qr-code/integration-configuration/qr-dynamic/integration#:~:text=Fluxo%20do%20modelo,sua%20escolha%2C%20efetue%20o%20pagamento;
