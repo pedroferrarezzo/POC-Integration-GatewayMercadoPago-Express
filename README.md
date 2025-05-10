@@ -1,4 +1,4 @@
-# POC-Integration-GatewayMercadoPago-Express
+![image](https://github.com/user-attachments/assets/ed076210-e700-4587-b03c-a2e3793caacd)# POC-Integration-GatewayMercadoPago-Express
 
 ## ENDPOINTS
 - ``/qr/:userId/:externalPosId (HTTP over TCP)``: gera um QR code e retorna no body a resposta da API do mercado pago;
@@ -26,8 +26,26 @@
   - ``docker tag ferrarezzo/mpnotificationpoc:prod 146654071014.dkr.ecr.us-east-1.amazonaws.com/ferrarezzo/mpnotificationpoc:prod``
   - ``docker push 146654071014.dkr.ecr.us-east-1.amazonaws.com/ferrarezzo/mpnotificationpoc:prod``
 
+## DEPLOY ECS
 
+- Criando Cluster;
+![image](https://github.com/user-attachments/assets/89affab0-e644-4668-bceb-f1f887ac13f7)
 
+- Criando Task Definition;
+![image](https://github.com/user-attachments/assets/8163a332-6b20-48cf-81bb-a238b890c7d6)
+![image](https://github.com/user-attachments/assets/2a7acb01-9520-489e-a9a1-f18d55b5d7a4)
+![image](https://github.com/user-attachments/assets/a489e9d9-ad2c-4181-bac9-f2f2fa27d8b7)
+![image](https://github.com/user-attachments/assets/0860c671-5557-4e33-b172-cc64c8275b0c)
+
+- Criando Service;
+![image](https://github.com/user-attachments/assets/ef8c7d31-3a98-4464-9ac0-da7c4ca5daaa)
+![image](https://github.com/user-attachments/assets/06146bbb-49c1-4cae-bfea-7abbd0d18340)
+![image](https://github.com/user-attachments/assets/c85b760e-f657-41c3-a47d-63b47e944e60)
+![image](https://github.com/user-attachments/assets/189e2a2a-1bf8-4be1-a0c5-9694d7c6fa07)
+![image](https://github.com/user-attachments/assets/da6cf81c-99c6-4e72-ab73-c61b9f78f888)
+![image](https://github.com/user-attachments/assets/5e173c70-168e-46b4-bcc8-aaab4ee68bec)
+![image](https://github.com/user-attachments/assets/900bbff3-2ed5-466d-920d-f7439e364577)
+![image](https://github.com/user-attachments/assets/a8028706-b62a-453d-abc0-589f21278dc3)
 
 ## Referências:
 - https://www.mercadopago.com.br/developers/pt/docs/qr-code/integration-configuration/qr-dynamic/integration#:~:text=Fluxo%20do%20modelo,sua%20escolha%2C%20efetue%20o%20pagamento;
