@@ -1,0 +1,449 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1746943077025
+  modified: 1746943077025
+collection:
+  - name: DEV
+    meta:
+      id: fld_b186408d8b3a40a5adc07cc51cee2ae9
+      created: 1746890360973
+      modified: 1746890360973
+      sortKey: -1746890360973
+    children:
+      - url: "{{devurl}}/notification"
+        name: Create Notification
+        meta:
+          id: req_50a4f0c9ca95431390e592b046124f45
+          created: 1729899841361
+          modified: 1746890378269
+          isPrivate: false
+          sortKey: -1746890363879
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"teste": "teste"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.1.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{devurl}}/qr/user_id/external_pos_id"
+        name: Generate QR
+        meta:
+          id: req_428c6a574df94970bb0b4522b6eaf7e5
+          created: 1746753496189
+          modified: 1746945319946
+          isPrivate: false
+          sortKey: -1746890363679
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "external_reference": "pedido_12345",
+              "title": "Combo FastFood",
+              "notification_url": "{{devurl}}/notification",
+              "total_amount": 29.90,
+              "items": [
+                {
+                  "sku_number": "hamburguer001",
+                  "category": "comida",
+                  "title": "Hambúrguer Clássico",
+                  "description": "Pão, carne, queijo e molho especial",
+                  "unit_measure": "unit",
+                  "unit_price": 15.00,
+                  "quantity": 1,
+                  "total_amount": 15.00
+                },
+                {
+                  "sku_number": "batata001",
+                  "category": "comida",
+                  "title": "Batata Frita Média",
+                  "description": "Batata crocante e salgada",
+                  "unit_measure": "unit",
+                  "unit_price": 7.90,
+                  "quantity": 1,
+                  "total_amount": 7.90
+                },
+                {
+                  "sku_number": "refri001",
+                  "category": "bebida",
+                  "title": "Refrigerante Lata",
+                  "description": "350ml de refrigerante à escolha",
+                  "unit_measure": "unit",
+                  "unit_price": 7.00,
+                  "quantity": 1,
+                  "total_amount": 7.00
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{devws}}"
+        name: "WS "
+        meta:
+          id: ws-req_79bef3500ea24d08820ab34ec25f9a59
+          created: 1746887925662
+          modified: 1746916362502
+          sortKey: -1746890363579
+        settings:
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+  - name: PROD
+    meta:
+      id: fld_30871634037345efb4d3210ca608ce45
+      created: 1746890375057
+      modified: 1746890375057
+      sortKey: -1746890375057
+    children:
+      - url: "{{produrl}}/notification"
+        name: Create Notification
+        meta:
+          id: req_8e9c0d2cd73a465290b7724b65f8c98e
+          created: 1746907188313
+          modified: 1746944998297
+          isPrivate: false
+          sortKey: -1746907196098
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"teste2": "teste2"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.1.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{produrl}}/qr/user_id/external_pos_id"
+        name: Generate QR
+        meta:
+          id: req_f6b21017af40469abffdf93e02b253bb
+          created: 1746907204765
+          modified: 1746945306226
+          isPrivate: false
+          sortKey: -1746907196198
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "external_reference": "fastfood_combo_789",
+              "title": "Combo Super Deluxe",
+              "description": "Lanche + Batata Grande + Refrigerante 500ml",
+              "notification_url": "{{produrl}}/notification",
+              "total_amount": 49.90,
+              "items": [
+                {
+                  "sku_number": "BURGER_XBACON",
+                  "category": "food",
+                  "title": "X-Bacon Deluxe",
+                  "description": "Pão brioche, hambúrguer 180g, bacon crocante, queijo cheddar",
+                  "unit_price": 24.90,
+                  "quantity": 1,
+                  "unit_measure": "unit",
+                  "total_amount": 24.90
+                },
+                {
+                  "sku_number": "FRIES_LARGE",
+                  "category": "food",
+                  "title": "Batata Frita Grande",
+                  "description": "Porção grande de batata frita com cheddar e bacon",
+                  "unit_price": 15.00,
+                  "quantity": 1,
+                  "unit_measure": "unit",
+                  "total_amount": 15.00
+                },
+                {
+                  "sku_number": "SOFT_DRINK_500ML",
+                  "category": "drink",
+                  "title": "Refrigerante 500ml",
+                  "description": "Coca-Cola, Guaraná ou Fanta Laranja",
+                  "unit_price": 10.00,
+                  "quantity": 1,
+                  "unit_measure": "unit",
+                  "total_amount": 10.00
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{prodws}}"
+        name: "WS "
+        meta:
+          id: ws-req_5133d38b9e4f47d4b25ef64d54b0d7b6
+          created: 1746907218852
+          modified: 1746916368808
+          sortKey: -1746907196298
+        settings:
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+  - name: MERCADO PAGO
+    meta:
+      id: fld_ad9e69e2553b4ab19ae034127d899352
+      created: 1746910710386
+      modified: 1746915883808
+      sortKey: -1746910710386
+    children:
+      - url: https://api.mercadopago.com/users/user_id/stores
+        name: Criar Loja
+        meta:
+          id: req_f45f3c6bda074d53800cdfbbfd6464c6
+          created: 1746910713534
+          modified: 1746945261699
+          isPrivate: false
+          sortKey: -1746910715463
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "POCMP",
+              "business_hours": {
+                "monday": [
+                  {
+                    "open": "00:00",
+                    "close": "23:59"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "open": "00:00",
+                    "close": "23:59"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "open": "00:00",
+                    "close": "23:59"
+                  }
+                ],
+                "thursday": [
+                  {
+                    "open": "00:00",
+                    "close": "23:59"
+                  }
+                ],
+                "friday": [
+                  {
+                    "open": "00:00",
+                    "close": "23:59"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "open": "00:00",
+                    "close": "23:59"
+                  }
+                ],
+                "sunday": [
+                  {
+                    "open": "00:00",
+                    "close": "23:59"
+                  }
+                ]
+              },
+              "external_id": "POCMP001",
+              "location": {
+                "street_number": "777",
+                "street_name": "Avenida dos Lanches Noturnos",
+                "city_name": "São Paulo",
+                "state_name": "São Paulo",
+                "latitude": -23.563586,
+                "longitude": -46.652739,
+                "reference": "Em frente ao Posto 24 Horas"
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        authentication:
+          type: bearer
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://api.mercadopago.com/pos
+        name: Criar POS
+        meta:
+          id: req_a83fc0a0b0b94ee48cbe7632b96d379c
+          created: 1746911151684
+          modified: 1746945272757
+          isPrivate: false
+          sortKey: -1746908955830.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "POS001",
+              "fixed_amount": true,
+              "store_id": 70390148,
+              "external_store_id": "POCMP001",
+              "external_id": "POCMP001POS001",
+              "category": 5611203
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        authentication:
+          type: bearer
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://api.mercadopago.com/users/user_id/stores/store_id
+        name: Excluir Loja
+        meta:
+          id: req_50773dbc42734deebc0f6aeeccb67323
+          created: 1746912605615
+          modified: 1746945221098
+          isPrivate: false
+          sortKey: -1746910715563
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        authentication:
+          type: bearer
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://api.mercadopago.com/pos/pos_id
+        name: Excluir POS
+        meta:
+          id: req_499bb57a83c842b6af80dedbaa5cc091
+          created: 1746912629270
+          modified: 1746945230834
+          isPrivate: false
+          sortKey: -1746910715513
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        authentication:
+          type: bearer
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://api.mercadopago.com/pos?external_id=external_pos_id
+        name: Buscar POS
+        meta:
+          id: req_04e6b551f544485b98d82275e0bc858f
+          created: 1746943975608
+          modified: 1746945247237
+          isPrivate: false
+          sortKey: -1746910715488
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        authentication:
+          type: bearer
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1746943094432
+    modified: 1746943094432
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1746943094388
+    modified: 1746944682218
+    isPrivate: false
+  data:
+    produrl: http://elb-poc-mp-1823173109.us-east-1.elb.amazonaws.com
+    prodws: ws://elb-poc-mp-1823173109.us-east-1.elb.amazonaws.com
