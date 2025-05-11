@@ -64,27 +64,33 @@
 ![image](https://github.com/user-attachments/assets/eaafb68d-0423-4200-b9f9-36b951179c0f)
 ![image](https://github.com/user-attachments/assets/81d6222e-3e2a-43aa-9e66-e961eb0e6354)
 
-- Anote a ``Record A`` do ALB da Service criada;
+- Anote a ``Record A`` do ALB da Service criada:
 ![image](https://github.com/user-attachments/assets/d8b394d4-3caf-404b-950c-9696718d636b)
 
 ## INSOMNIA
 
-- Crie uma loja, informando o ``User ID`` e ``Access Token`` capturado anteriormente na conta ``Vendedor``, no ``Path Paramter`` e ``Header Authorization`` respectivamente;
+- Crie uma loja, informando o ``User ID`` e ``Access Token`` capturado anteriormente na conta ``Vendedor``, no ``Path Paramter`` e ``Header Authorization`` respectivamente:
   ![image](https://github.com/user-attachments/assets/821c1349-b78e-44a4-8059-eaacce42fdb6)
 
-- Crie um POS, informando o ``Access Token`` capturado anteriormente na conta ``Vendedor`` no ``Header Authorization``, e no body o ``id`` e ``external_id`` da loja criada;
+- Crie um POS, informando o ``Access Token`` capturado anteriormente na conta ``Vendedor`` no ``Header Authorization``, e no body o ``id`` e ``external_id`` da loja criada:
+![Captura de Tela 2025-05-11 às 03 18 13](https://github.com/user-attachments/assets/582ecdd0-5d0e-4239-a9bf-c3c083fc6cba)
 
-- Gere o código do QR Code de pagamento informando via Path Paramter o ``external_pos_id`` do POS criado, através do endpoint ``http://ecs_alb_url/qr/:userId/:externalPosId``;
+- Gere o código do QR Code de pagamento informando via Path Paramter o ``external_pos_id`` do POS criado, através do endpoint ``http://ecs_alb_url/qr/:userId/:externalPosId``:
 ![image](https://github.com/user-attachments/assets/08571760-c27a-4e70-9efd-f908f3081b20)
 
 ## TESTE DE INTEGRAÇÃO
 
-- Acesse https://www.qrcode-monkey.com/pt/#text, copie o ``qr_data`` retornado pela API ``/qr``, e gere o Qr Code;
+- Baixe o aplicativo do mercado pago, logue com a conta criada no ínicio de ``Comprador``;
+  
+- Acesse https://www.qrcode-monkey.com/pt/#text, copie o ``qr_data`` retornado pela API ``/qr``, e gere o Qr Code:
 ![image](https://github.com/user-attachments/assets/c713fee0-250f-4cfa-b74e-c414875a177f)
 
-- Baixe o aplicativo do mercado pago, logue com a conta criada no ínicio de ``Comprador``;
+- Via Insomnia, se conecte ao endpoint Websocket ``ws://ecs_alb_url``:
+![Captura de Tela 2025-05-11 às 03 20 46](https://github.com/user-attachments/assets/f91bf1fa-3285-4f8f-9b5f-c1fd3a98172b)
 
-- Via Insomnia, se conecte ao endpoint Websocket ``ws://ecs_alb_url``
+- Escaneie o Qr Code, pague com saldo em conta e observe o webhook sendo acionado pelo mercado pago:
+![WhatsApp Image 2025-05-11 at 03 31 14](https://github.com/user-attachments/assets/018fae67-0c4c-4f17-ba52-76d403879c91)
+![Captura de Tela 2025-05-11 às 03 28 16](https://github.com/user-attachments/assets/4b2b9b73-f7e6-4048-a4fc-04fa0891a713)
 
 ## Referências:
 - https://www.mercadopago.com.br/developers/pt/docs/qr-code/integration-configuration/qr-dynamic/integration#:~:text=Fluxo%20do%20modelo,sua%20escolha%2C%20efetue%20o%20pagamento;
