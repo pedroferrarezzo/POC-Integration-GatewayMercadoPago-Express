@@ -5,7 +5,6 @@
 - ``/notification (HTTP over TCP)``: retransmite o conteúdo enviado no body para todos os clientes conectados via websocket. Atua como um webhook que será informado no atributo "notification_url" da API do mercado pago;
 - ``/ (WEBSOCKET over TCP)``: exibe o body enviado para o webhook /notification em tempo real.
 
-
 ## MERCADO PAGO 
 
 - Acessar https://www.mercadopago.com.br/developers, logar com conta pessoal, e criar aplicação:
@@ -28,17 +27,18 @@
 ## UPLOAD ECR
 
 - Configurar ``~/.aws/credentials`` de acordo com as informações da AWS Academy;
-  
+  ![Captura de Tela 2025-05-11 às 03 40 06](https://github.com/user-attachments/assets/0ac42978-ac41-4b2e-b678-91323e015ce9)
+
 - Executar ``aws configure`` via cli;
 
 - Criando repositório:
 ![image](https://github.com/user-attachments/assets/a1d36968-4a22-49c5-94e4-9c7cd61923f7)
 
-- Push para o Registry:
+- Push para o Registry (Ex ECR URL: 146654071014.dkr.ecr.us-east-1.amazonaws.com):
   - ``aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 146654071014.dkr.ecr.us-east-1.amazonaws.com``
-  - ``docker build -f docker/Dockerfile --target prod --build-arg PORT=3000 -build-arg WORKDIR_API=/app -t ferrarezzo/mpnotificationpoc:prod .``
-  - ``docker tag ferrarezzo/mpnotificationpoc:prod 146654071014.dkr.ecr.us-east-1.amazonaws.com/ferrarezzo/mpnotificationpoc:prod``
-  - ``docker push 146654071014.dkr.ecr.us-east-1.amazonaws.com/ferrarezzo/mpnotificationpoc:prod``
+  - ``docker build -f docker/Dockerfile --target prod --build-arg PORT=3000 -build-arg WORKDIR_API=/app -t ferrarezzo/mpnotificationpoc:latest .``
+  - ``docker tag ferrarezzo/mpnotificationpoc:latest 146654071014.dkr.ecr.us-east-1.amazonaws.com/ferrarezzo/mpnotificationpoc:latest``
+  - ``docker push 146654071014.dkr.ecr.us-east-1.amazonaws.com/ferrarezzo/mpnotificationpoc:latest``
 
 ## DEPLOY ECS
 
